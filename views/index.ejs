@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Mi Blog</title></head>
+<body>
+  <h1>Publicaciones</h1>
+  <a href="/new">Nueva publicación</a>
+  <% posts.forEach((post, index) => { %>
+    <div>
+      <h2><a href="/post/<%= index %>"><%= post.title %></a></h2>
+      <p><%= post.content.substring(0, 100) %>...</p>
+    </div>
+  <% }) %>
+</body>
+</html>
