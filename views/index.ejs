@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head><title>Mi Blog</title></head>
+<head>
+  <title>Mi Blog</title>
+</head>
 <body>
-  <h1>Publicaciones</h1>
-  <a href="/new">Nueva publicación</a>
-  <% posts.forEach((post, index) => { %>
+  <h1>Publicaciones recientes</h1>
+  <a href="/new">Crear nueva publicación</a>
+  <hr>
+  <% posts.forEach(post => { %>
     <div>
-      <h2><a href="/post/<%= index %>"><%= post.title %></a></h2>
+      <h2><a href="/post/<%= post._id %>"><%= post.title %></a></h2>
       <p><%= post.content.substring(0, 100) %>...</p>
+      <hr>
     </div>
   <% }) %>
 </body>
